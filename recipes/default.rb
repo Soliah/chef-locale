@@ -18,9 +18,12 @@ end
 execute "Generate locale" do
   command "locale-gen #{lang} #{lc_all}"
   not_if {
-    return false unless File.exists?("/etc/default/locale")
-    locale = File.read("/etc/default/locale")
-    locale.include?("LANG=#{lang}") && locale.include?("LC_ALL=#{lc_all}")
+    if File.exists?("/etc/default/locale")
+      locale = File.read("/etc/default/locale")
+      locale.include?("LANG=#{lang}") && locale.include?("LC_ALL=#{lc_all}")
+    else
+      false
+    end
   }
 
   notifies :run, "execute[Update locale]"
