@@ -1,33 +1,33 @@
-Description
-===========
+[![Build Status](https://travis-ci.org/Soliah/chef-locale.svg)](https://travis-ci.org/Soliah/chef-locale)
 
-Sets default system locale
+# chef-locale
 
-You can see which languages are available by
-$ locale -a
+Set the locale on Ubuntu.
 
-On debian based systems you can set the locale by running
- update-locale LANG={lang}
-e.g.
- update-locale LANG=en_AU.utf8
+## Requirements
 
-It updates the file /etc/default/locale
+Only tested to be working on the following Ubuntu and Debian versions below, but may work on earlier versions too.
 
-On rhel based systems you can set default locale updating /etc/sysconfig/i18n
-There doesn't seem to be a command line tool to update this file?!?
+- Ubuntu 14.04
+- Ubuntu 12.04
 
-Platforms
-=========
+## Attributes
 
-Tested on Ubuntu, CentOS
+### locale::default
 
-Attributes
-==========
+Key                  | Type   | Default      | Description
+:--------------------|--------|--------------|-------------------------------------------------
+`["locale"]["lang"]` | String | `en_US.utf8` | Sets LANG
+`["locale"]["lang"]` | String | `en_US.utf8` | Sets LC_ALL
 
-* `node[:locale][:lang]` -- defaults to "en_US.utf8"
-* `node[:locale][:lc_all]` -- defaults to "en_US.utf8"
+## Usage
 
-Usage
-=====
+Just include `locale` in your node's `run_list`:
 
-Include the default recipe in your run list.
+```json
+{
+  "run_list": [
+    "recipe[locale]"
+  ]
+}
+```
