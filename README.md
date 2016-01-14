@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Soliah/chef-locale.svg)](https://travis-ci.org/Soliah/chef-locale)
+[![Circle CI](https://circleci.com/gh/Soliah/chef-locale.svg?style=svg)](https://circleci.com/gh/Soliah/chef-locale)
 
 # chef-locale
 
