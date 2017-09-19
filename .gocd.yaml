@@ -1,13 +1,13 @@
 environments:
   development:
     pipelines:
-      - chef-nginx
+      - chef-locale
 pipelines:
-  chef-nginx:
+  chef-locale:
     group: development
     materials:
       gitMaterial1:
-        git: git@github.com:kinesisptyltd/chef-nginx.git
+        git: git@github.com:kinesisptyltd/chef-locale.git
     stages:
       - test:
           jobs:
