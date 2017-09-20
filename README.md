@@ -1,5 +1,3 @@
-[![Circle CI](https://circleci.com/gh/kinesisptyltd/chef-locale.svg?style=svg)](https://circleci.com/gh/kinesisptyltd/chef-locale)
-
 # chef-locale
 
 Set the locale on Ubuntu.
