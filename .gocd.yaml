@@ -1,10 +1,10 @@
 environments:
-  development:
+  chef:
     pipelines:
       - chef-locale
 pipelines:
   chef-locale:
-    group: development
+    group: chef
     materials:
       gitMaterial1:
         git: git@github.com:kinesisptyltd/chef-locale.git
